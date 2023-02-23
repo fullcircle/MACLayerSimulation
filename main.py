@@ -39,6 +39,7 @@ class AccessPoint:
 def simulate(env):
     ap = AccessPoint(env)
     stations = [Station(env, i, ap) for i in range(10)]
+    print('There are''stations')
     env.process(ap.receive())
     for station in stations:
         yield env.process(station.transmit())
